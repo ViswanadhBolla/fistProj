@@ -1,0 +1,21 @@
+<h1>registration form</h1>
+
+<div>
+    <form #empForm ="ngForm" (ngSubmit)="AddEmp()">
+        <div class="error" *ngIf="eid.touched==true">Touched {{eid.touched}}</div>
+        <div class="error" *ngIf="eid.untouched==true">Untouched {{eid.untouched}}</div>
+        <div class="error" *ngIf="eid.dirty==true">Dirty {{eid.dirty}}</div>
+        <div class="error" *ngIf="eid.pristine==true">Pristine {{eid.pristine}}</div>
+        <div class="error" *ngIf="eid.valid==true">Valid {{eid.valid}}</div>
+        <div class="error" *ngIf="eid.invalid==true">Invalid {{eid.invalid}}</div>
+        Eid : <input type ="number" name="eid" [(ngModel)]="e.eid" #eid="ngModel" required /><br/><br/>
+        Ename : <input type ="text" name="ename" [(ngModel)]="e.ename" #ename="ngModel" required /><br/><br/>
+        Salary : <input type ="number" name="salary" [(ngModel)]="e.salary" #salary="ngModel" min="1000" max="1000000" required /><br/><br/>
+        <div class="error" *ngIf="salary.errors?.['min']">Minimum salary should be 1000/-</div>
+        <div class="error" *ngIf="salary.errors?.['max']">Maximum salary should be 1000000/-</div>
+        <!-- Date of joining: <input type="date" name="doj" [(ngModel)]="e.doj" #doj="ngModel" /><br/><br/> -->
+        <!-- <button type="submit"  [disabled]="!empForm.valid" >Save</button> -->
+        <input type="submit"  [disabled]="!empForm.valid" value="Register" class="btn btn-success"  />
+        
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<!-- <p>login works!</p>
+<h1>{{firstnumber}}</h1> -->
+
+<form>
+    
+    <img [src]="image"/>
+    <br/><br/>
+    <div>
+        Enter Your Name: <input type="text" [(ngModel)]="firstName" [ngModelOptions]="{standalone:true}"/>
+        <br/><br/>
+        Enter Your password: <input type="password" [(ngModel)]="pwd" [ngModelOptions]="{standalone:true}"/>
+        <input type="submit" (click)="validate()" value="login" />
+    </div>
+    <!-- <h2>{{"hello "+firstName}}</h2> -->
+    <h3>{{msg}}</h3>
+</form>
